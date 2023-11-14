@@ -28,6 +28,9 @@ const Circle = styled(motion.div)`
   border-radius: 35px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
+
+// variant 객체로 어트리뷰트를 관리할 수 있다.
+// 자식에 애니메이션이 상속된다.
 const boxVariants = {
   start: {
     opacity: 0,
@@ -40,7 +43,9 @@ const boxVariants = {
       type: "spring",
       duration: 0.5,
       bounce: 0.5,
+      // 자식의 애니메이션을 관리할 수 있다.
       delayChildren: 0.5,
+      // 자식 순서대로 시간차이를 둘수 있다.
       staggerChildren: 0.2,
     },
   },
