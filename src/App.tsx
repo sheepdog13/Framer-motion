@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Variants from "./components/Variants";
 import Gestures from "./components/Gestures";
 import Drag from "./components/Drag";
+import MotionValues from "./components/MotionValues";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -30,7 +31,7 @@ const myVars = {
 function App() {
   return (
     <>
-      <Drag />
+      <MotionValues />
     </>
   );
 }
