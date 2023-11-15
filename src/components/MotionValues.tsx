@@ -18,7 +18,6 @@ const Box = styled(motion.div)`
   width: 100px;
   height: 100px;
   background-color: rgba(255, 255, 255, 1);
-
   border-radius: 12px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;

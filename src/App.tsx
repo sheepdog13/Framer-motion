@@ -5,6 +5,7 @@ import Variants from "./components/Variants";
 import Gestures from "./components/Gestures";
 import Drag from "./components/Drag";
 import MotionValues from "./components/MotionValues";
+import Path from "./components/Path";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -31,7 +32,7 @@ const myVars = {
 function App() {
   return (
     <>
-      <MotionValues />
+      <Path />
     </>
   );
 }
