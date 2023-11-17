@@ -7,6 +7,7 @@ import Drag from "./components/Drag";
 import MotionValues from "./components/MotionValues";
 import Path from "./components/Path";
 import Presence from "./components/Presence";
+import Slider from "./components/Slider";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -33,7 +34,7 @@ const myVars = {
 function App() {
   return (
     <>
-      <Presence />
+      <Slider />
     </>
   );
 }
