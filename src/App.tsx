@@ -8,6 +8,7 @@ import MotionValues from "./components/MotionValues";
 import Path from "./components/Path";
 import Presence from "./components/Presence";
 import Slider from "./components/Slider";
+import LayoutId from "./components/LayoutId";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -34,7 +35,7 @@ const myVars = {
 function App() {
   return (
     <>
-      <Slider />
+      <LayoutId />
     </>
   );
 }
