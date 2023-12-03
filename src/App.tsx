@@ -1,41 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
+import Home from "./pages/Home";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Variants from "./components/Variants";
-import Gestures from "./components/Gestures";
-import Drag from "./components/Drag";
-import MotionValues from "./components/MotionValues";
-import Path from "./components/Path";
-import Presence from "./components/Presence";
-import Slider from "./components/Slider";
-import LayoutId from "./components/LayoutId";
+
+interface IPointer {
+  x: number | undefined;
+  y: number | undefined;
+}
 
 const Wrapper = styled.div`
-  height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
 `;
 
-const Box = styled(motion.div)`
-  width: 200px;
-  height: 200px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+const Pointer = styled(motion.button)<IPointer>`
+  position: absolute;
+  background: none;
+  border: 2px solid #999999;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  transform: ${(props) => `translate3d(${props.x}px, ${props.y}px, 0px)`}
+    translate(-50%, -50%) scale(0.5, 0.5);
+  transition: 0.1s;
 `;
 
-const myVars = {
-  start: { scale: 0 },
-  end: { scale: 1, rotateZ: 360, transition: { type: "spring", delay: 0.5 } },
+const PointerVariants = {
+  start: {},
+  end: {
+    opacity: 1,
+    y: 0,
+  },
 };
 
 function App() {
+  const [xy, setXY] = useState({ x: 0, y: 0 });
+
+  const xyHandler = (e: React.MouseEvent<HTMLDivElement>) => {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    setXY({ x: mouseX, y: mouseY });
+  };
   return (
     <>
-      <LayoutId />
+      <Wrapper onMouseMove={xyHandler}>
+        <Pointer x={xy.x} y={xy.y} />
+        <Home />
+      </Wrapper>
     </>
   );
 }
