@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "../components/common/Button";
 import SvgIcon from "@mui/material/SvgIcon";
 import AnimationIcon from "@mui/icons-material/Animation";
-
+import { motion } from "framer-motion";
 const Header = styled.div`
   width: 100%;
   height: 100px;

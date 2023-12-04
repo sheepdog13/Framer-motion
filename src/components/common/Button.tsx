@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { memo } from "react";
 import styled from "styled-components";
 
@@ -6,7 +7,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-const StyledButton = styled.button`
+const StyledButton = styled(motion.button)`
   outline: none;
   border: none;
   display: flex;
@@ -18,7 +19,11 @@ const StyledButton = styled.button`
 `;
 
 function Button({ children, onClick }: ButtonProps) {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>;
+  return (
+    <StyledButton whileHover={{ scale: "2" }} onClick={onClick}>
+      {children}
+    </StyledButton>
+  );
 }
 
 export default memo(Button);
